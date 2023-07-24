@@ -27,4 +27,4 @@ int print_mod(va_list arg)
 
 	putchar('%');
 	return (1);
-}
+}i
