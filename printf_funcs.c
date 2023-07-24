@@ -1,10 +1,9 @@
 #include "main.h"
-
 /*function to print a single character*/
 int print_char(va_list arg)
 {
-        putchar(va_arg(arg, int));
-        return (1);
+		putchar(va_arg(arg, int));
+      		 return (1);
 }
 /*function to print a string*/
 int print_str(va_list arg)
