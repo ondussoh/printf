@@ -11,10 +11,10 @@ int _printf(const char *format, ...)
 		{'i', print_int},
 		{'b', print_binary},
 	};
-	// check if format is valid and format != "%"
+	/* check if format is valid and format != "%" */
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
-	// starts the printing process
+	/* starts the printing process */
 	va_start(list, format);
 	while (format[i] != '\0')
 	{
