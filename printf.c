@@ -4,6 +4,11 @@
  * @format: format.
  * Return: Printed chars.
  */
+int main(void) {
+    _printf("Hello, %s! The character is %c and here is a percent sign %%.\n", "world", 'A');
+    return 0;
+}
+
 int _printf(const char *format, ...)
 {
 	va_list list;
