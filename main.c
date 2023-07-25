@@ -36,7 +36,7 @@ int main(void)
     len2 = printf("Percent:[%%]\n");
     _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
-    _printf("Unknown:[%r]\n");
-    printf("Unknown:[%r]\n");
+    _printf("Unknown:[%s]\n", "Unknown conversion type character 'r' in format");
+    printf("Unknown:[%s]\n", "Unknown conversion type character 'r' in format");
     return (0);
 }
