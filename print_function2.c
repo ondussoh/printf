@@ -17,8 +17,9 @@ int print_pointer(va_list types, char buffer[],
 	unsigned long num_addrs;
 	char map_to[] = "0123456789abcdef";
 	void *addrs = va_arg(types, void *);
-	
+
 	UNUSED(width);
+
 	UNUSED(size);
 	if (addrs == NULL)
 		return (write(1, "(nil)", 5));
@@ -52,14 +53,15 @@ int print_pointer(va_list types, char buffer[],
  * @size: Size specifier
  * Return: Number of chars printed
  */
-int print_non_printable(va_list types, char buffer[],
-			
-	int flags, int width, int precision, int size)
+int print_non_printable(va_list types, char buffer[], int flags, int width,
+int precision, int size)
 {
 	int i = 0, offset = 0;
+
 	char *str = va_arg(types, char *);
-	
+
 	UNUSED(flags);
+
 	UNUSED(width);
 	UNUSED(precision);
 	UNUSED(size);
@@ -86,13 +88,12 @@ int print_non_printable(va_list types, char buffer[],
  * @size: Size specifier
  * Return: Numbers of chars printed
  */
-int print_reverse(va_list types, char buffer[],
-		  
-	int flags, int width, int precision, int size)
+int print_reverse(va_list types, char buffer[], int flags, int width,
+int precision, int size)
 {
 	char *str;
 	int i, count = 0;
-	
+
 	UNUSED(buffer);
 	UNUSED(flags);
 	UNUSED(width);
@@ -108,6 +109,7 @@ int print_reverse(va_list types, char buffer[],
 	for (i = i - 1; i >= 0; i--)
 	{
 		char z = str[i];
+
 		write(1, &z, 1);
 		count++;
 	}
@@ -118,14 +120,11 @@ int print_reverse(va_list types, char buffer[],
  * @types: Lista of arguments
  * @buffer: Buffer array to handle print
  * @flags:  Calculates active flags
- * @width: get width
- * @precision: Precision specification
  * @size: Size specifier
  * Return: Numbers of chars printed
  */
-int print_rot13string(va_list types, char buffer[],
-		      
-	int flags, int width, int precision, int size)
+int print_rot13string(va_list types, char buffer[], int flags, int width,
+int precision, int size)
 {
 	char x;
 	char *str;
@@ -133,8 +132,9 @@ int print_rot13string(va_list types, char buffer[],
 	int count = 0;
 	char in[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char out[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
-	
+
 	str = va_arg(types, char *);
+
 	UNUSED(buffer);
 	UNUSED(flags);
 	UNUSED(width);
